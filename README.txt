@@ -1,0 +1,35 @@
+= Modellers Testing Framework =
+
+This is a simple testing framework to support computational modellers in
+separating out the scientific value of different aspects of their code.  The
+code is assumed to provide an architecture (or framework), supporting the
+development of different models (or simulations).  
+
+Tests are divided into three groups:
+
+* Unit tests: for low-level, implementational details of the architecture.
+* Process tests: for functional aspects, usually linked to terms used within the implemented scientific theory.
+* Canonical result tests: for the implemented models based on the architecture.
+
+Further information about the testing framework may be found in:
+
+* P.C.R. Lane and F.Gobet, 'Developing reproducible and comprehensible computational models', Artificial Intelligence, 144:251-263, 2003.
+
+* P.C.R. Lane and F. Gobet, 'A methodology for developing computational implementations of scientific theories', Proceedings of the Tenth International Conference on Computer Modelling & Simulation (IEEE Computer Society), pp.392-7, 2008.
+
+= License =
+
+modellers_testing_framework is free software: you can redistribute it 
+and/or modify it under the terms of the GNU General Public License as 
+published by the Free Software Foundation, either version 3 of the 
+License, or (at your option) any later version.
+
+modellers_testing_framework is distributed in the hope that it will 
+be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with modellers_testing_framework.  
+If not, see <http://www.gnu.org/licenses/>.
+
