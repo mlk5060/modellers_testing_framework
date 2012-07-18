@@ -22,7 +22,7 @@ License
 =======
 
 modellers\_testing\_framework is distributed under the terms of the 
-[Open Works License]{http://owl.apotheon.org/}
+[Open Works License](http://owl.apotheon.org/)
 
 Copyright 2012, Peter Lane.
 
