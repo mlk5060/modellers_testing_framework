@@ -8,12 +8,12 @@ Gem::Specification.new do |s|
   s.summary = "A testing framework for developing computational modelling projects."
   s.license = "Open Works License"
   s.description = <<-END
-Testing framework for developing computational models.  The aim is to separate tests into 
-groups, relating to their importance in the implemented scientific theory.
-END
+                  Testing framework for developing computational models. The aim is to separate tests into
+                  groups, relating to their importance in the implemented scientific theory.
+  END
   s.files = [
     "license.txt",
-    "README.rdoc", 
+    "README.rdoc",
     "lib/modellers_testing_framework.rb",
     "examples/example.rb",
   ]
@@ -21,4 +21,3 @@ END
   s.has_rdoc = true
   s.extra_rdoc_files << "README.rdoc"
 end
-
