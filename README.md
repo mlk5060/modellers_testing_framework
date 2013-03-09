@@ -22,13 +22,28 @@ Further information about the testing framework may be found in:
 
 This project defines implementations of the testing framework in:
 
-1. Ruby
-2. Lisp
+1. Java, as an extension to junit using categories
+2. Ruby
+3. Lisp
+
+## Install
+
+### Java
+
+(to come)
+
+### Ruby
+
+    > jruby -S gem install modellers_testing_framework
+
+### Lisp
+
+Download file, and load into project.
 
 ## License
 
 modellers\_testing\_framework is distributed under the terms of the 
 [Open Works License](http://owl.apotheon.org/)
 
-Copyright 2012, Peter Lane.
+Copyright (c) 2012-13, Peter Lane.
 
