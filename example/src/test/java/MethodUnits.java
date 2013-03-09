@@ -1,4 +1,4 @@
-import info.peterlane.mdk.*;
+import info.peterlane.mdk.testing.*;
 
 import org.junit.runners.Suite.SuiteClasses;
 import org.junit.experimental.categories.Categories;

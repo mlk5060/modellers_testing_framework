@@ -1,9 +1,9 @@
 
+import info.peterlane.mdk.testing.*;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-
-import info.peterlane.mdk.*;
 
 public class MethodTests {
 

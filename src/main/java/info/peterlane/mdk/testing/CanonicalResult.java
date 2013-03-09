@@ -1,3 +1,3 @@
-package info.peterlane.mdk;
+package info.peterlane.mdk.testing;
 
 public interface CanonicalResult {}
