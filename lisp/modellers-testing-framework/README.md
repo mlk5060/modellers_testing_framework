@@ -34,11 +34,10 @@ Individual tests are written in one of the following forms:
 
 where: 
 
-  - `THING-TO-CHECK` is a test, returning a boolean value
-                            test should return T if the test passed 
-  - `MESSAGE` is optional, and is given if the test is NIL
-  - `EXPECTED` is the predicted value
-  - `ACTUAL` is the computed value
+  - `THING-TO-CHECK` is a test, returning a boolean value. The test should return T if the test passed.
+  - `MESSAGE` is optional, and is reported if the test is NIL or fails.
+  - `EXPECTED` is the predicted value.
+  - `ACTUAL` is the computed value.
 
 To create a group of tests, use either of: 
 

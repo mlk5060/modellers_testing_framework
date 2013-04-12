@@ -38,9 +38,12 @@ This project defines implementations of the testing framework in:
 
 ### Lisp
 
-Use Quicklisp: `(ql:quickload "modellers-testing-framework)`
+Use Quicklisp: 
 
-or download "modellers-testing-framework.lisp" and include into project.
+  - Download lisp/modellers-testing-framework to quicklisp/local-projects
+  - `(ql:quickload "modellers-testing-framework")`
+
+or download the file "modellers-testing-framework.lisp" and include into project.
 
 ## License
 
