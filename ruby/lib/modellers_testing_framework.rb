@@ -48,7 +48,7 @@ module TestFramework
   # raises an exception with given message if items are different.
   def assert_equal(expected, computed, msg = "")
     unless expected == computed
-      raise TestException.new "Expected #{expected}, but calculated #{computed} #{msg == "" ? "" : "-"} #{msg}"
+      raise TestException.new "Expected #{expected.to_s}, but calculated #{computed.to_s} #{msg == "" ? "" : "-"} #{msg}"
     end
   end
 
@@ -56,7 +56,7 @@ module TestFramework
   # raises an exception with given message if items are equal.
   def assert_not_equal(expected, computed, msg = "")
     if expected == computed
-      raise TestException.new "Expected not equal to #{expected}, but calculated #{computed} #{msg == "" ? "" : "-"} #{msg}"
+      raise TestException.new "Expected not equal to #{expected.to_s}, but calculated #{computed.to_s} #{msg == "" ? "" : "-"} #{msg}"
     end
   end
 
@@ -68,24 +68,45 @@ module TestFramework
     last_was_error = false 
 
     error_count = 0
-    print "#{test_name} tests: "
+    previous_test_suite = ""
+
+    # Print out type of tests in blue.
+    puts "\n\e[34m===== #{test_name} tests =====\e[0m"
+    print_file_name = true
     test_list.each do |pair|
       begin
+
+        #Grab the procedure run (pair[1]), convert it to a string, get everything from "@"" to ":"", 
+        #chop off ":" (chop) and "@" ([1..-1]).  This gives the name of the file where tests are being
+        #run
+        test_suite = pair[1].to_s[/@(...)(.)*\:/].chop[1..-1] 
+        if(test_suite != previous_test_suite)
+          puts "\n" + test_suite
+          previous_test_suite = test_suite
+        end
+
+        print "   #{pair[0]}: "
         pair[1].call
-        print "."
         last_was_error = false 
+
+        # Print "OK" in green
+        print "\e[32mOK\e[0m\n"
       rescue TestException => te 
-        puts "\n" unless last_was_error
-        puts "Error in #{pair[0]}: #{te.to_s}"
+        puts "" unless last_was_error
+
+        # Print error message in red.
+        print "\e[31m ERROR: #{te.to_s} \e[0m\n"
         last_was_error = true
         error_count += 1
       end
     end
     puts "" unless last_was_error
+
+    # Summary in yellow
     puts <<-END
-There #{error_count == 1 ? "was" : "were"} \
+\e[33mThere #{error_count == 1 ? "was" : "were"} \
 #{error_count} error#{error_count == 1 ? "" : "s"} \
-out of #{test_list.size} test#{test_list.size == 1 ? "" : "s"}.
+out of #{test_list.size} test#{test_list.size == 1 ? "" : "s"}.\e[0m
 END
   end
 
