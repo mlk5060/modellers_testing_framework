@@ -102,7 +102,7 @@ module TestFramework
     end
     puts "" unless last_was_error
 
-    # Print summary in yellow
+    # Summary in yellow
     puts <<-END
 \e[33mThere #{error_count == 1 ? "was" : "were"} \
 #{error_count} error#{error_count == 1 ? "" : "s"} \
